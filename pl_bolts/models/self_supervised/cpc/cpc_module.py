@@ -14,10 +14,10 @@ from torch.optim.lr_scheduler import MultiStepLR
 from pl_bolts import metrics
 from pl_bolts.datamodules import CIFAR10DataLoaders, STL10DataLoaders
 from pl_bolts.datamodules.ssl_imagenet_dataloaders import SSLImagenetDataLoaders
+from pl_bolts.losses.self_supervised_learning import InfoNCE
 from pl_bolts.models.self_supervised.cpc import transforms as cpc_transforms
 from pl_bolts.models.self_supervised.cpc.networks import CPCResNet101
 from pl_bolts.models.self_supervised.evaluator import SSLEvaluator
-from pl_bolts.losses.self_supervised_learning import InfoNCE
 
 __all__ = [
     'CPCV2'
@@ -285,7 +285,11 @@ class CPCV2(pl.LightningModule):
             'dataset': 'imagenet128',
             'depth': 10,
             'patch_size': 32,
+<<<<<<< HEAD
             'batch_size': 48,
+=======
+            'batch_size': 52,
+>>>>>>> cee9bdd88cdbec912af7c419925b5d8c0fa47f58
             'nb_classes': 1000,
             'patch_overlap': 32 // 2,
             'lr_options': [
